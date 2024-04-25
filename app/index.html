@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title> Project Preview </title>
+    <script src="shared-config.js"></script>
+    <script src="https://ui5.sap.com/1.108.7/resources/sap-ui-core.js" 
+            id="sap-ui-bootstrap"
+            data-sap-ui-theme="sap_horizon"
+            data-sap-ui-bindingSyntax="complex" 
+            data-sap-ui-xx-bindingSyntax="complex"
+            data-sap-ui-resourceroots='{"assets": "assets"}' 
+            data-sap-ui-libs="sap.m,sap.uxap,sap.ui.layout,sap.f">
+    </script>
+    <link rel="stylesheet" href="assets/preview.css">
+</head>
+
+<body id="body" class="sapUiBody">
+    <script>
+        "use strict";
+        sap.ui.localResources("assets");
+        (function (jQuery, App, Page) {
+            sap.ui.getCore().attachInit(function () {
+                sap.ui.define([
+                    "sap/ui/core/mvc/Controller",
+                    "sap/ui/model/json/JSONModel"
+                ], function (Controller, JSONModel) {
+                    return Controller.extend("PreviewController", {
+                        onInit: function () {
+
+                            const data = {"Services":[{"ServiceName":"MyIncidentAppSrv","DetailsURL":"./my-incident-app-srv/","Metadata":"./my-incident-app-srv/$metadata","Entities":[{"Name":"Incidents","URL":"./my-incident-app-srv/Incidents","FioriURL":"$fiori-preview/MyIncidentAppSrv/Incidents#preview-app"},{"Name":"ReplacementItems","URL":"./my-incident-app-srv/ReplacementItems","FioriURL":"$fiori-preview/MyIncidentAppSrv/ReplacementItems#preview-app"},{"Name":"Products","URL":"./my-incident-app-srv/Products","FioriURL":"$fiori-preview/MyIncidentAppSrv/Products#preview-app"}],"EntitiesCount":3}]}
+                            this.getView().setModel(new JSONModel(data));
+                        }
+                    });
+                });
+                var oApp = new App()
+                var previewView = sap.ui.view({
+                    viewName: "assets.Preview",
+                    type: sap.ui.core.mvc.ViewType.XML
+                });
+                oApp.addPage(new Page({
+                    content: [previewView],
+                    showHeader: false
+                })).placeAt("content");
+            });
+
+        }(jQuery, sap.m.App, sap.m.Page));
+    </script>
+    <div id="content"></div>
+</body>
+
+</html>

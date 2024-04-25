@@ -1,0 +1,6 @@
+ID;incidentsID;Title;Description;Status;Priority;Date
+dbf92b6e-456b-47ef-8a12-341133418ca0;Incident1;Network Outage;There is a network outage in the office.;Open;High;2021-06-27
+2b3cddcd-e1dc-45c8-9ff7-df866df2280e;Incident2;Server Crash;One of the servers crashed unexpectedly.;Open;Medium;2021-06-28
+9fc7b45c-c6b3-448e-8233-8ac791c18220;Incident3;Email Delivery Issue;Some users are experiencing issues with email delivery.;Open;Low;2021-06-29
+929e47d2-a7ca-433f-a7a9-6fa7b5bc6a4f;Incident4;Application Error;The application is throwing an error message.;Open;High;2021-06-30
+fd1a9eee-08f3-4725-b3ef-d2002f27f6d5;Incident5;Data Loss;Some data has been lost due to a system failure.;Open;Medium;2021-07-01
